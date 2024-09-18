@@ -1,0 +1,28 @@
+{
+  "name": "biblioteca",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_EMV=test jest --verbose --runInBand",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "publish-react": "cd web && npm run build && cd .. && rm -rf ./src/public-react && mv ./web/dist ./src/public-react"
+  },
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "testEnviroment": "node"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "jest": "^29.7.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.3",
+    "supertest": "^7.0.0",
+    "test": "^3.3.0"
+  },
+  "description": ""
+}
