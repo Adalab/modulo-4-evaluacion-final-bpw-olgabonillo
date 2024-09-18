@@ -1,4 +1,9 @@
+body {
+    background-color: beige;
+}
+
 .title-library {
+    font-size: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,18 +13,31 @@
 .title {
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-father {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    padding: 10px;
+
 }
 
 .img {
     height: 200px;
     width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

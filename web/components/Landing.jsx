@@ -5,7 +5,6 @@ function Landing() {
   const [books, setBooks] = useState([]);
 
   async function getBooks() {
-    
     try {
       const response = await fetch(`http://localhost:5001/books`);
 
@@ -20,7 +19,6 @@ function Landing() {
     }
   }
 
-
   useEffect(() => {
     getBooks();
   }, []);
@@ -32,13 +30,15 @@ function Landing() {
           <div className="preview" key={book.idBooks}>
             <div className="bookImage"></div>
             <div className="card-books">
-                <div className="books">
-                  <div className="image">
-                    <img className="img"src={book.image} />
-                  </div>
-                  <h1 className="title">{book.title}</h1>
-                  <h3 className="name">{book.name} {book.lastname}</h3>
+              <div className="books">
+                <div className="image">
+                  <img className="img" src={book.image} />
                 </div>
+                <h1 className="title">{book.title}</h1>
+                <h3 className="name">
+                  {book.name} {book.lastname}
+                </h3>
+              </div>
             </div>
           </div>
         ))}

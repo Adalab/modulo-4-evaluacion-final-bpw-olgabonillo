@@ -4,7 +4,7 @@ const mysql = require("mysql2/promise");
 
 require("dotenv").config();
 
-//Crear el servidor
+
 const app = express();
 
 async function getDBConnection() {
@@ -18,7 +18,7 @@ async function getDBConnection() {
     return connection;
 }
 
-//Configurar el servidor
+
 app.use(cors());
 app.use(express.json());
 
@@ -28,7 +28,7 @@ app.listen(port, () => {
 })
 
 
-//Funciona
+
 app.get("/books", async (req, res) => {
     
     try {
@@ -50,7 +50,7 @@ app.get("/books", async (req, res) => {
     }
 })
 
-//Funciona
+
 app.get("/books/:id", async (req, res) => {
     
     const id = req.params.id;
@@ -82,7 +82,7 @@ app.get("/books/:id", async (req, res) => {
 
 })
 
-//FUNVCIONA
+
 app.post("/books", async (req, res) => {
     
     const { title, genre, image, category, year, pages, idAuthor } = req.body;
@@ -104,13 +104,12 @@ app.post("/books", async (req, res) => {
     }
 })
 
-//FUNCIONA FALTA IDAUTHOR
+
 app.put("/books/:id", async (req, res) => {
     const id = req.params.id;
     const { title, genre, image, category, year, pages, idAuthor } = req.body;
     const connection = await getDBConnection();
 
-    // en esto tengo dudas y no tengo muy claro que sea así...
 
     if (title) {
         const query = "UPDATE books SET title = ? WHERE idBooks = ?";
@@ -153,7 +152,6 @@ app.put("/books/:id", async (req, res) => {
     })
 })
 
-//Eliminar un libro
 
 app.delete("/books/:id", async (req, res) => {
     const id = req.params.id;
