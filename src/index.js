@@ -178,3 +178,6 @@ app.delete("/books/:id", async (req, res) => {
         })
     }
 })
+
+const staticServer = "./src/public-react";
+app.use(express.static(staticServer))
